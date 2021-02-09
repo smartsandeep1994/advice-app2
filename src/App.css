@@ -41,7 +41,7 @@
 }
 
 button.button.button1 {
-  left: -255px;
+  left: 100px;
   
 }
 /* button.button.button2 {
@@ -51,7 +51,7 @@ button.button.button1 {
 
 button.button.button2 {
   top: -50px;
-  left:200px;
+  left:640px;
 }
 
 .heading {
@@ -59,6 +59,8 @@ button.button.button2 {
   align-items: center;
   height: 200px;
   max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .button {
@@ -82,9 +84,10 @@ button.button.button2 {
   top:-10px;
 } */
 
-h1{
+h1 {
   position: relative;
-  left:200px;
+  text-align: right;
+  right: 110px;
 }
   
 .button span {
@@ -101,6 +104,12 @@ h1{
 .button:hover span {
   animation: storm 0.7s ease-in-out both;
   animation-delay: 0.06s;
+}
+.contentss{
+  background-color: #fff;
+  width: 900px;
+  position: relative;
+  top: 100px;
 }
   
 @keyframes rotate {

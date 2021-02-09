@@ -92,22 +92,25 @@ class App extends React.Component {
         <div className="app">
           {this.state.advice ?
               <div className="card quote-box" style={{background:this.state.bg}} id="text">
-                <h3 className="heading" style={{color:this.state.font}}>
-                  <span> <i class="fa fa-quote-left"></i> &nbsp; {this.state.advice}</span>
-                </h3>
-                <h1 style={{color:this.state.font2}} className="author">-{this.state.author}</h1>
-              
-                <button className="button button1" style={{background:this.state.btn1}}>
-                  <a href={"https://twitter.com/intent/tweet?url=" +this.state.advice} 
-                    target="_blank"
-                    id="tweet-quote-anchor-element."
-                  >
-                    <span  style={{color:this.state.font3}} id="tweet-quote"><i class="fa fa-twitter tweet" aria-hidden="true"></i></span>
-                  </a>
-                </button>
-                <button className="button button2" onClick={this.fetchAdvice} style={{background:this.state.btn2}}>
-                  <span  style={{color:this.state.font4}} id="new-quote">New Quote</span>
-                </button>
+                <div className="contentss">
+                  <h3 className="heading" style={{color:this.state.bg}}>
+                    <span> <i class="fa fa-quote-left"></i> &nbsp; {this.state.advice}</span>
+                  </h3>
+                  <h1 style={{color:this.state.bg}} className="author">-{this.state.author}</h1>
+                
+                  <button className="button button1" style={{background:this.state.bg}}>
+                    <a href={"https://twitter.com/intent/tweet?url=" +this.state.advice} 
+                      target="_blank"
+                      id="tweet-quote-anchor-element."
+                    >
+                      <span  style={{color:'#fff'}} id="tweet-quote"><i class="fa fa-twitter tweet" aria-hidden="true"></i></span>
+                    </a>
+                  </button>
+                  <button className="button button2" onClick={this.fetchAdvice} style={{background:this.state.bg}}>
+                    <span  style={{color:'#fff'}} id="new-quote">New Quote</span>
+                  </button>
+                </div>
+                
               </div>
           :<div>Loading</div>}
           
