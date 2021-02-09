@@ -13,8 +13,10 @@ class App extends React.Component {
         bg:'whitesmoke',
         btn1:'green',
         btn2:'red',
-        font:'24',
-        font2:'32'
+        font:'black',
+        font2:'white',
+        font3:'yellow',
+        font4:'#ccc',
       }
 
       componentDidMount() {
@@ -50,11 +52,38 @@ class App extends React.Component {
             this.setState({ btn2:'rgb('+ btn2.join(',') + ')' });
         } 
 
-        var font = Math.floor(Math.random() * ((30-12)+1) + 12); 
-        this.setState({ font: font });
+        var font = [];
+        for(var i = 0; i < 3; i++){
+            font.push(Math.floor(Math.random() * 255));
+            console.log(font);
+            this.setState({ font:'rgb('+ font.join(',') + ')' });
+        } 
+
+        var font2 = [];
+        for(var i = 0; i < 3; i++){
+            font2.push(Math.floor(Math.random() * 255));
+            console.log(font2);
+            this.setState({ font2:'rgb('+ font2.join(',') + ')' });
+        } 
+
+        var font3 = [];
+        for(var i = 0; i < 3; i++){
+            font3.push(Math.floor(Math.random() * 255));
+            console.log(font3);
+            this.setState({ font3:'rgb('+ font3.join(',') + ')' });
+        } 
+
+        var font4 = [];
+        for(var i = 0; i < 3; i++){
+            font4.push(Math.floor(Math.random() * 255));
+            console.log(font4);
+            this.setState({ font4:'rgb('+ font4.join(',') + ')' });
+        } 
+        // var font = Math.floor(Math.random() * ((30-12)+1) + 12); 
+        // this.setState({ font: font });
         
-        var font2 = Math.floor(Math.random() * ((30-12)+1) + 12); 
-        this.setState({ font2: font2 });
+        // var font2 = Math.floor(Math.random() * ((30-12)+1) + 12); 
+        // this.setState({ font2: font2 });
       }
   
 
@@ -62,20 +91,22 @@ class App extends React.Component {
       return (
         <div className="app">
           {this.state.advice ?
-              <div className="card" style={{background:this.state.bg}}>
-                <h3 className="heading" style={{fontSize:this.state.font+'px'}}>{this.state.advice}{this.state.font}</h3>
-                <h1 style={{fontSize:this.state.font2+'px'}}>-{this.state.author}</h1>
+              <div className="card quote-box" style={{background:this.state.bg}} id="text">
+                <h3 className="heading" style={{color:this.state.font}}>
+                  <span> <i class="fa fa-quote-left"></i> &nbsp; {this.state.advice}</span>
+                </h3>
+                <h1 style={{color:this.state.font2}} className="author">-{this.state.author}</h1>
               
                 <button className="button button1" style={{background:this.state.btn1}}>
                   <a href={"https://twitter.com/intent/tweet?url=" +this.state.advice} 
                     target="_blank"
-                    id="tweet-quote anchor element."
+                    id="tweet-quote-anchor-element."
                   >
-                    <span>Twiter</span>
+                    <span  style={{color:this.state.font3}} id="tweet-quote"><i class="fa fa-twitter tweet" aria-hidden="true"></i></span>
                   </a>
                 </button>
                 <button className="button button2" onClick={this.fetchAdvice} style={{background:this.state.btn2}}>
-                  <span>New Quote</span>
+                  <span  style={{color:this.state.font4}} id="new-quote">New Quote</span>
                 </button>
               </div>
           :<div>Loading</div>}
